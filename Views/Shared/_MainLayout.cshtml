@@ -1,0 +1,51 @@
+@{
+    Layout = "_Layout";
+}
+<header>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Equinox</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Left-aligned navigation -->
+                <ul class="navbar-nav me-auto">
+                    <li><a class="nav-link" asp-controller="Club" asp-action="List">Clubs</a></li>
+                    <li><a class="nav-link" asp-controller="Class" asp-action="List">Classes</a></li>
+                    <li><a class="nav-link" asp-controller="Membership" asp-action="List">Membership</a></li>
+                    <li><a class="nav-link" asp-controller="PrivateClass" asp-action="List">Private Training</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Gym" ? "active" : "")"
+                           asp-controller="Gym" asp-action="ShowClasses">Gym Sessions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Gym" asp-action="ViewBookings">
+                            Bookings
+                            @if (ViewBag.CartCount != null && (int)ViewBag.CartCount > 0)
+                            {
+                                <span class="badge bg-danger ms-1">@ViewBag.CartCount</span>
+                            }
+                            <i class="fas fa-shopping-cart ms-1"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Right-aligned Admin link -->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>@RenderBody()</main>
+<footer class="text-center mt-4">
+    <a asp-action="Contact">Contact us</a> |
+    <a asp-action="Privacy">Privacy Policy</a> |
+    <a asp-action="Terms">Terms</a> |
+    <a asp-action="CookiePolicy">Cookies</a>
+</footer>

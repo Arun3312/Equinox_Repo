@@ -1,0 +1,13 @@
+@{
+    Layout = "_Layout";
+}
+
+<nav class="navbar navbar-expand navbar-dark" style="background-color: #0B3D91;">
+    <div class="container justify-content-end">
+        <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Site</a>
+    </div>
+</nav>
+
+<main class="container mt-4">
+    @RenderBody()
+</main>

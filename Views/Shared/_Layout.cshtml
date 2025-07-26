@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Equinox</title>
+
+    <!-- Bootstrap CSS (from local path) -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Font Awesome CDN for cart icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">Equinox</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Gym" ? "active" : "")"
+                               asp-controller="Gym" asp-action="ShowClasses">Gym Session</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Gym" asp-action="ViewBookings">
+                                Bookings
+                                @if (ViewBag.CartCount != null && (int)ViewBag.CartCount > 0)
+                                {
+                                    <span class="badge bg-danger ms-1">@ViewBag.CartCount</span>
+                                }
+                                <i class="fas fa-shopping-cart ms-1"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        <!-- One-time TempData confirmation -->
+      
+        @RenderBody()
+    </main>
+
+   
+    <!-- Bootstrap JS (from local path) -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

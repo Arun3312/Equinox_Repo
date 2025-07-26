@@ -1,0 +1,60 @@
+@model FilterViewModel1
+@{
+    ViewBag.Title = "Filter Classes";
+}
+
+<h2>Gym Sessions</h2>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+
+<form method="get" asp-action="ShowClasses">
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label>Club:</label>
+            <select name="club" class="form-select">
+                <option value="All" selected="@(Model.SelectedClubName == "All")">All</option>
+                @foreach (var c in Model.AllClubs)
+                {
+                    <option value="@c.Name" selected="@(Model.SelectedClubName == c.Name)">
+                        @c.Name
+                    </option>
+                }
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label>Category:</label>
+            <select name="category" class="form-select">
+                <option value="All" selected="@(Model.SelectedCategoryName == "All")">All</option>
+                @foreach (var cat in Model.AllCategories)
+                {
+                    <option value="@cat.Name" selected="@(Model.SelectedCategoryName == cat.Name)">
+                        @cat.Name
+                    </option>
+                }
+            </select>
+        </div>
+        <div class="col-md-4 mt-4">
+            <button type="submit" class="btn btn-primary">Apply Filter</button>
+        </div>
+    </div>
+</form>
+
+<div class="row">
+    @foreach (var item in Model.AvailableClasses)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="~/images/@item.ClassPicture" class="card-img-top" alt="@item.Name image" />
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">Club: @item.Club.Name</p>
+                    <p class="card-text">Category: @item.ClassCategory.Name</p>
+                    <a asp-action="ShowDetails" asp-route-id="@item.EquinoxClassId" class="btn btn-outline-info">View Details</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,29 @@
+@model Equinox.Models.EquinoxClass
+
+@{
+    ViewBag.Title = "Class Details";
+}
+
+<h2>@Model.Name</h2>
+
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="~/images/@Model.ClassPicture" class="img-fluid rounded-start" alt="@Model.Name">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Name</h5>
+                <p class="card-text"><strong>Club:</strong> @Model.Club.Name</p>
+                <p class="card-text"><strong>Category:</strong> @Model.ClassCategory.Name</p>
+                <p class="card-text"><strong>Time:</strong> @Model.Time on @Model.ClassDay</p>
+                 <p class="card-text"><strong>Couch:</strong> @Model.User.Name</p>                
+
+                <a asp-action="ShowClasses" class="btn btn-secondary">Back to Classes</a>
+                <a asp-action="Book" asp-route-id="@Model.EquinoxClassId" class="btn btn-primary">Book This Class</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+

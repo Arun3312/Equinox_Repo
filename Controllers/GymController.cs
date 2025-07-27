@@ -7,6 +7,7 @@ namespace Equinox.Controllers
 {
     public class GymController : Controller
     {
+        
         private readonly EquinoxContext _context;
         private const string BookingSessionKey = "Bookings";
         private const string ClubFilterKey = "SelectedClub";

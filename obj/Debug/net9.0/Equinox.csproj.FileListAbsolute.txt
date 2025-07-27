@@ -627,6 +627,7 @@ C:\Users\fathe\Sample2\Equinox_new\Equinox\obj\Debug\net9.0\refint\Equinox.dll
 C:\Users\fathe\Sample2\Equinox_new\Equinox\obj\Debug\net9.0\Equinox.pdb
 C:\Users\fathe\Sample2\Equinox_new\Equinox\obj\Debug\net9.0\Equinox.genruntimeconfig.cache
 C:\Users\fathe\Sample2\Equinox_new\Equinox\obj\Debug\net9.0\ref\Equinox.dll
+<<<<<<< HEAD
 C:\Users\ARUN\OneDrive\Equinox\Equinox\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\ARUN\OneDrive\Equinox\Equinox\bin\Debug\net9.0\appsettings.json
 C:\Users\ARUN\OneDrive\Equinox\Equinox\bin\Debug\net9.0\Equinox.staticwebassets.runtime.json
@@ -846,3 +847,6 @@ C:\Users\ARUN\OneDrive\Equinox\Equinox\obj\Debug\net9.0\refint\Equinox.dll
 C:\Users\ARUN\OneDrive\Equinox\Equinox\obj\Debug\net9.0\Equinox.pdb
 C:\Users\ARUN\OneDrive\Equinox\Equinox\obj\Debug\net9.0\Equinox.genruntimeconfig.cache
 C:\Users\ARUN\OneDrive\Equinox\Equinox\obj\Debug\net9.0\ref\Equinox.dll
+=======
+C:\Users\fathe\Sample2\Equinox_new\Equinox\obj\Debug\net9.0\Equinox.sourcelink.json
+>>>>>>> 85afbe9 (Commit -2)

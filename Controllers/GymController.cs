@@ -18,7 +18,7 @@ namespace Equinox.Controllers
         }
 
        
-       public IActionResult ShowClasses(string? club, string? category)
+       public IActionResult Show_Classes(string? club, string? category)
 {
     club ??= HttpContext.Session.GetString(ClubFilterKey) ?? "All";
     category ??= HttpContext.Session.GetString(CategoryFilterKey) ?? "All";
@@ -59,7 +59,7 @@ namespace Equinox.Controllers
         {
             HttpContext.Session.SetString(ClubFilterKey, club);
             HttpContext.Session.SetString(CategoryFilterKey, category);
-            return RedirectToAction("ShowClasses");
+            return RedirectToAction("Show_Classes");
         }
 
         public IActionResult Detail(int id)
@@ -77,7 +77,7 @@ namespace Equinox.Controllers
             return View(gymClass);
         }
 
-        public IActionResult Book(int id)
+        public IActionResult Class_Book(int id)
         {
             var bookings = HttpContext.Session.GetObjectFromJson<List<int>>(BookingSessionKey) ?? new List<int>();
             if (!bookings.Contains(id))
@@ -86,7 +86,7 @@ namespace Equinox.Controllers
                 HttpContext.Session.SetObjectAsJson(BookingSessionKey, bookings);
                 TempData["Message"] = "Class booked successfully!";
             }
-            return RedirectToAction("ShowClasses");
+            return RedirectToAction("Show_Classes");
         }
 
         public IActionResult ViewBookings()

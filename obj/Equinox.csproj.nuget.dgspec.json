@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\ARUN\\OneDrive\\Equinox\\Equinox\\Equinox.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\ARUN\\OneDrive\\Equinox\\Equinox\\Equinox.csproj",
         "packagesPath": "C:\\Users\\ARUN\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ARUN\\OneDrive\\Equinox\\Equinox\\obj\\",
+=======
+    "C:\\Users\\ARUN\\OneDrive\\Equinox_updated\\Equinox\\Equinox.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\ARUN\\OneDrive\\Equinox_updated\\Equinox\\Equinox.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ARUN\\OneDrive\\Equinox_updated\\Equinox\\Equinox.csproj",
+        "projectName": "Equinox",
+        "projectPath": "C:\\Users\\ARUN\\OneDrive\\Equinox_updated\\Equinox\\Equinox.csproj",
+        "packagesPath": "C:\\Users\\ARUN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ARUN\\OneDrive\\Equinox_updated\\Equinox\\obj\\",
+>>>>>>> 85afbe9 (Commit -2)
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ARUN\\AppData\\Roaming\\NuGet\\NuGet.Config"

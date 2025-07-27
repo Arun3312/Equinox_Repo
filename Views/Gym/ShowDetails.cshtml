@@ -19,8 +19,8 @@
                 <p class="card-text"><strong>Time:</strong> @Model.Time on @Model.ClassDay</p>
                  <p class="card-text"><strong>Couch:</strong> @Model.User.Name</p>                
 
-                <a asp-action="ShowClasses" class="btn btn-secondary">Back to Classes</a>
-                <a asp-action="Book" asp-route-id="@Model.EquinoxClassId" class="btn btn-primary">Book This Class</a>
+                <a asp-action="Show_Classes" class="btn btn-secondary">Back to Classes</a>
+                <a asp-action="Class_Book" asp-route-id="@Model.EquinoxClassId" class="btn btn-primary">Book This Class</a>
             </div>
         </div>
     </div>
